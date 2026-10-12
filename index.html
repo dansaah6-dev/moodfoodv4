@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Что съесть под настроение</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;700&display=swap">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--h:200;
+--bg:hsl(var(--h) 45% 94%);--surface:hsl(var(--h) 45% 99%);--ink:#1d2230;--muted:#586075;--accent:hsl(var(--h) 60% 38%);--line:hsl(var(--h) 25% 82%);--chip:hsl(var(--h) 40% 88%);--wbg:#fde8e8;--wfg:#8a1c1c}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:hsl(var(--h) 28% 11%);--surface:hsl(var(--h) 24% 16%);--ink:#eef0f6;--muted:#a3abbf;--accent:hsl(var(--h) 70% 70%);--line:hsl(var(--h) 18% 26%);--chip:hsl(var(--h) 22% 22%);--wbg:#4a1f1f;--wfg:#ffb4b4}}
+:root[data-theme="dark"]{--bg:hsl(var(--h) 28% 11%);--surface:hsl(var(--h) 24% 16%);--ink:#eef0f6;--muted:#a3abbf;--accent:hsl(var(--h) 70% 70%);--line:hsl(var(--h) 18% 26%);--chip:hsl(var(--h) 22% 22%);--wbg:#4a1f1f;--wfg:#ffb4b4}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Onest,system-ui,sans-serif;transition:background .5s}
+main{max-width:1040px;margin:0 auto;padding:28px 18px 48px}
+h1{font:700 clamp(26px,5vw,40px)/1.1 Unbounded,Onest,sans-serif;margin:0 0 8px;letter-spacing:-.02em}
+.sub{color:var(--muted);margin:0 0 22px;max-width:60ch}
+.grid{display:grid;grid-template-columns:310px 1fr;gap:28px;align-items:start}
+@media (max-width:780px){.grid{grid-template-columns:1fr}}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:14px}
+.box h3{font:600 14px/1.2 Onest,sans-serif;margin:0 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{border:1.5px solid transparent;background:var(--chip);color:var(--ink);font:inherit;font-size:15px;padding:7px 12px;border-radius:999px;cursor:pointer;display:flex;gap:6px;align-items:center}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--bg);font-weight:600}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.row{display:flex;gap:8px}
+input[type=text],textarea,select{font:inherit;width:100%;padding:9px 11px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink)}
+.btn{font:inherit;font-weight:600;border:0;border-radius:10px;padding:9px 13px;background:var(--accent);color:var(--bg);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent);border:1.5px solid var(--accent)}
+.btn.sm{padding:5px 10px;font-size:14px}
+.opt{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:15px;margin-top:10px}
+.al-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px;margin:10px 0;font-size:15px}
+.al-grid label{display:flex;gap:6px;align-items:center}
+.hint{color:var(--muted);font-size:13px;margin:8px 0 0}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;min-height:320px}
+.panel h2{font:600 20px/1.25 Unbounded,Onest,sans-serif;margin:0 0 4px}
+.panel h2.s2{font-size:17px;margin-top:26px}
+.note{color:var(--muted);margin:0 0 14px}
+.item{display:grid;grid-template-columns:56px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--line)}
+.emoji{font-size:36px;line-height:56px;text-align:center;background:var(--chip);border-radius:16px;height:56px}
+.item b{font-size:17px}
+.item p{margin:2px 0 0;color:var(--muted)}
+.star{color:var(--accent);font-size:14px;margin-left:6px;white-space:nowrap}
+.warn{background:var(--wbg);color:var(--wfg);border-radius:8px;padding:6px 10px;margin:8px 0;font-size:14px}
+.ings{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.ing{font:inherit;font-size:13px;padding:3px 9px;border-radius:999px;border:1px dashed var(--muted);background:transparent;color:var(--ink);cursor:pointer}
+.ing[aria-pressed="true"]{text-decoration:line-through;opacity:.5}
+.ing.al{border:1.5px solid var(--wfg);color:var(--wfg)}
+.rev{border-top:1px dashed var(--line);margin-top:8px;padding-top:8px;font-size:14px}
+.rev q{display:block;quotes:none;color:var(--ink)}
+.rev small{color:var(--muted)}
+.rev form,.rev .f{display:grid;gap:6px;margin-top:8px}
+.empty{color:var(--muted);padding:40px 0;text-align:center}
+.gate .grid{grid-template-columns:1fr;max-width:560px;margin:0 auto}
+.gate aside .box:not(#prof),.gate .panel,.gate .sub{display:none}
+.fs{border:0;padding:0;margin:14px 0 0}
+.fs legend{font-weight:600;font-size:14px;padding:0;margin-bottom:6px}
+.fs label{display:flex;gap:8px;align-items:center;margin:3px 0;font-size:15px}
+.gate #vw{display:none}
+.pl{padding:12px 0;border-top:1px solid var(--line)}
+.pl b{font-size:17px}
+.pl p{margin:2px 0 4px;color:var(--muted)}
+.pl a{color:var(--accent);font-size:14px}
+.fine{margin-top:22px;color:var(--muted);font-size:13px;max-width:70ch}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+  <h1>Что съесть под настроение</h1>
+  <p class="sub">Выберите эмоцию. Приложение учтёт погоду, время суток, ваш профиль и пищевые привычки.</p>
+  <div class="grid">
+    <aside>
+      <div class="box" id="prof"></div>
+      <div class="box"><h3>Как вы себя чувствуете</h3><div class="chips" id="chips"></div>
+        <div class="row" style="margin-top:12px"><input type="text" id="free" placeholder="Или своими словами" aria-label="Опишите состояние"><button class="btn" id="go">Найти</button></div>
+      </div>
+      <div class="box"><h3>Погода</h3><div class="chips" id="wx"></div>
+        <button class="btn ghost sm" id="geo" style="margin-top:10px">Определить по месту</button><p class="hint" id="wnote"></p></div>
+      <div class="box"><h3>Приём пищи</h3><div class="chips" id="ml"></div>
+        </div>
+    </aside>
+    <div><div class="chips" id="vw" style="margin-bottom:12px"></div><section class="panel" aria-live="polite" id="out"></section></div>
+  </div>
+</main>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const ALGS={молоко:"сливки,йогурт,сыр,фета,молоко,кефир",глютен:"хлеб,паста,тортилья,лапша,тесто",яйца:"яйцо",орехи:"миндаль,грецкие орехи",арахис:"арахисовая паста",рыба:"лосось",морепродукты:"креветки",соя:"соевый соус,тофу",мёд:"мёд",цитрусовые:"апельсин,лимон"};
+const A2={};for(const k in ALGS)ALGS[k].split(",").forEach(i=>A2[i]=k);
+const MEAT=new Set("курица,лосось,мясо,креветки".split(","));
+const DIETS={all:"Ем всё",veg:"Вегетарианец",pesc:"Пескетарианец",vegan:"Веган"},HABITS={healthy:"Предпочитаю полезное",mix:"Баланс",tasty:"Хочу вкусное"};
+const RS={"без глютена":"хлеб,паста,тортилья,лапша,тесто,овсянка","без лактозы":ALGS.молоко,"без сахара":"шоколад,мёд,яблочный сок","без острого":"перец чили"};
+const R2={};for(const k in RS)RS[k].split(",").forEach(i=>(R2[i]=R2[i]||[]).push(k));
+const BAN={veg:MEAT,pesc:new Set(["курица","мясо"]),vegan:new Set([...MEAT,...ALGS.молоко.split(","),"яйцо","мёд"])};
+const IND=new Set("сливки,тесто,шоколад,сыр,лапша,паста,мёд,кукуруза,соевый соус,яблочный сок".split(","));
+const radios=(n,o,v)=>Object.entries(o).map(([k,t])=>`<label><input type="radio" name="${n}" value="${k}" ${k===v?"checked":""}>${t}</label>`).join("");
+const D=a=>({e:a[0],n:a[1],w:a[2],m:a[3],t:a[4],i:a[5].split(",")});
+const EM={
+joy:{l:"Радость",e:"😄",h:42,note:"Поддержим хорошее настроение яркой, лёгкой едой.",kw:["рад","счаст","весел","отлично","круто","класс","праздн"],f:[
+["🍓","Ягоды со сливками","Свежо и празднично.","bs","c","ягоды,сливки,мята"],["🍕","Пицца с друзьями","Еду приятно делить.","ld","h","тесто,сыр,помидоры,базилик"],["🥑","Тост с авокадо и яйцом","Сытно и легко.","bl","a","хлеб,авокадо,яйцо,лимон"],["🍣","Роллы","Яркий вкус для вечера.","ld","c","рис,лосось,нори,соевый соус"],["🥗","Салат с цитрусами и фетой","Свежий вкус.","ls","c","апельсин,фета,руккола,оливковое масло"]]},
+sad:{l:"Грусть",e:"😔",h:225,note:"Нужна тёплая, знакомая еда. Мягко к себе.",kw:["грус","печал","плохо","тоск","слез","плач","обид","уныл"],f:[
+["🍲","Тёплый куриный суп","Горячее даёт ощущение заботы.","ld","h","курица,морковь,картофель,лапша,зелень"],["🍝","Паста с сыром","Простая еда из детства.","ld","h","паста,сыр,сливки"],["🥣","Овсянка с корицей и яблоком","Мягкая и тёплая.","b","h","овсянка,молоко,яблоко,корица"],["🍌","Банан с арахисовой пастой","Быстрая энергия.","bs","c","банан,арахисовая паста,хлеб"],["🍫","Тёмный шоколад с миндалём","Небольшая порция удовольствия.","s","c","шоколад,миндаль"]]},
+anxious:{l:"Тревога",e:"😰",h:170,note:"Нужна ровная энергия и поменьше кофеина.",kw:["трев","нерв","волн","стресс","паник","беспоко","напряж","страш","боюсь","дедлайн"],f:[
+["🥜","Миндаль и грецкие орехи","Магний и жиры дают ровную энергию.","s","c","миндаль,грецкие орехи"],["🐟","Лосось с овощами","Омега-3 в привычном рационе.","ld","h","лосось,брокколи,лимон,оливковое масло"],["🥣","Гречка с овощами","Медленные углеводы.","ld","h","гречка,кабачок,морковь,лук"],["🥬","Салат из шпината","Магний и клетчатка.","ls","c","шпинат,огурец,оливковое масло,семечки"],["🍊","Апельсин и киви","Свежо, с витамином C.","bs","c","апельсин,киви"]]},
+angry:{l:"Злость",e:"😠",h:8,note:"Накормите тело и сбросьте напряжение чем-то хрустящим.",kw:["зл","бесит","раздраж","ярост","гнев","взбес","достал"],f:[
+["🥕","Овощи с хумусом","Хруст помогает выпустить пар.","ls","c","морковь,огурец,хумус"],["🍎","Яблоко с арахисовой пастой","Хруст и сладость.","s","c","яблоко,арахисовая паста"],["🍿","Попкорн","Лёгкий хруст.","s","c","кукуруза,соль"],["🌶️","Острый рамен","Яркий вкус переключает.","ld","h","лапша,яйцо,перец чили,соевый соус"],["🍗","Курица с рисом","На сытый желудок злость слабее.","ld","h","курица,рис,овощи"]]},
+tired:{l:"Усталость",e:"😴",h:262,note:"Нужна энергия без скачков. Сначала вода и белок.",kw:["устал","вымот","сон","засыпа","нет сил","разбит","выгор","сонн"],f:[
+["🥚","Яйца с цельнозерновым хлебом","Белок и сложные углеводы.","bl","h","яйцо,хлеб,зелень"],["🥣","Овсянка с орехами и ягодами","Энергия на несколько часов.","b","h","овсянка,молоко,грецкие орехи,ягоды"],["🍌","Банан и миндаль","Быстрый перекус.","s","c","банан,миндаль"],["🍠","Запечённый батат","Сложные углеводы и клетчатка.","ld","h","батат,оливковое масло,зелень"],["🍗","Курица с гречкой","Железо и белок.","ld","h","курица,гречка,овощи"]]},
+bored:{l:"Скука",e:"🥱",h:30,note:"Хочется новизны: пробуйте то, что давно откладывали.",kw:["скуч","скучно","нечем","однообраз","лень"],f:[
+["🌮","Такос","Каждый собирает сам.","ld","h","тортилья,фасоль,сыр,авокадо,помидоры"],["🍜","Рамен с добавками","Много слоёв вкуса.","ld","h","лапша,яйцо,курица,соевый соус"],["🧀","Сырная тарелка с виноградом","Много мелких кусочков.","s","c","сыр,виноград,грецкие орехи,мёд"],["🥟","Пельмени или гёдза","Лепить — занять руки.","ld","h","тесто,мясо,лук"],["🍉","Арбуз с мятой","Лёгкая замена бездумному жеванию.","s","c","арбуз,мята"]]},
+love:{l:"Влюблённость",e:"🥰",h:335,note:"Еда, которой хочется поделиться.",kw:["любл","влюб","свидан","романт","нрав","бабочк"],f:[
+["🍓","Клубника с шоколадом","Классика для вечера.","s","c","клубника,шоколад"],["🍝","Паста при свечах","Приятно готовить вдвоём.","ld","h","паста,помидоры,базилик,сыр"],["🍞","Брускетта","Лёгкий ужин вдвоём.","ld","c","хлеб,помидоры,базилик,оливковое масло"],["🍣","Суши-сет на двоих","Общая тарелка сближает.","ld","c","рис,лосось,нори,соевый соус"],["🍰","Десерт на двоих","Две ложки, одна тарелка.","ls","c","тесто,сливки,ягоды,яйцо"]]},
+lonely:{l:"Одиночество",e:"🫂",h:285,note:"Тёплая еда и ритуал уюта. Позовите кого-нибудь в гости.",kw:["одинок","никого","пусто","изолир"],f:[
+["🍲","Большой горшок рагу","Приготовьте и позовите гостей.","ld","h","мясо,картофель,морковь,лук"],["🥧","Домашний пирог","Запах выпечки — это дом.","ls","h","тесто,яблоко,корица,яйцо"],["🍳","Красивый завтрак","Накройте стол для себя.","b","h","яйцо,хлеб,авокадо,помидоры"],["🍜","Мисо-суп","Тёплый и простой.","ld","h","тофу,водоросли,соевый соус"],["🧆","Блюдо из детства","Вкус близости.","ld","h","картофель,мясо,лук,укроп"]]}};
+const DR={hot:[["🧊","Лимонад с мятой и льдом","Освежает в жару.","bls","c","лимон,мята,вода,лёд"],["🥛","Холодный кефир с мятой","Утоляет жажду.","bls","c","кефир,мята"],["🍉","Арбузный смузи","Много воды.","bs","c","арбуз,мята,лёд"]],
+cold:[["☕","Чай с имбирём и мёдом","Согревает.","bls","h","чай,имбирь,мёд,лимон"],["🍫","Горячий шоколад","Тепло и уют.","sd","h","молоко,шоколад"],["🍎","Яблочный пунш без алкоголя","Яблочный сок с пряностями.","sd","h","яблочный сок,корица,апельсин,гвоздика"]]};
+const WX=[["hot","🔥 Жарко"],["mild","🌤 Комфортно"],["cold","❄️ Холодно"]],ML=[["b","Завтрак"],["l","Обед"],["s","Перекус"],["d","Ужин"]];
+const PL=[
+["Сойка","Паназиатская кухня: суши, лапша вок, рамен и другие блюда.","Ресторан",["asia"]],
+["Риатовский пивовар","Ресторан-пивоварня с русской и европейской кухней, есть летняя веранда.","Ресторан",["euro","meat"]],
+["ПиццаФабрика","Семейный ресторан с пиццей, подходит для больших компаний.","Ресторан",["pizza"]],
+["Antonio","Заведение с европейской кухней.","Ресторан",["euro"]],
+["Огонёк моей души","Ресторан с домашней атмосферой.","Ресторан",["home"]],
+["Мустанг","Мясной ресторан.","Ресторан",["meat"]],
+["Библиотека","Кафе-ресторан.","Ресторан",[]],
+["Базиlik","Ресторан самообслуживания.","Ресторан",["home"]],
+["Точка G","Ресторан.","Ресторан",[]],
+["Додо Пицца","Пиццерия с быстрой доставкой и разнообразным меню.","Фастфуд",["pizza"]],
+["Бургер Кинг","Сеть ресторанов быстрого питания.","Фастфуд",["burger"]],
+["Вкусно — и точка","Сеть предприятий быстрого обслуживания.","Фастфуд",["burger"]],
+["Шоурма","Кафе с акцентом на шаурму и другие восточные блюда.","Фастфуд",["shawarma"]],
+["Шаурма с огоньком","Заведение с акцентом на восточную и кавказскую кухню.","Фастфуд",["shawarma"]],
+["На углях","Кафе с акцентом на блюда на гриле.","Фастфуд",["meat"]],
+["Блинотека","Кофейня с быстрым обслуживанием, специализируется на блинах.","Фастфуд",["pancakes"]],
+["Burger Club","Американский ресторан быстрого питания.","Фастфуд",["burger"]],
+["Котлетная","Точка с акцентом на мясные блюда.","Фастфуд",["meat"]],
+["Rostic's","Сеть ресторанов быстрого обслуживания.","Фастфуд",["chicken"]]
+].map(a=>({n:a[0],d:a[1],t:a[2],g:a[3]}));
+let view="dishes",ptype="Все";
+const isIv=()=>/иванов/i.test((typeof user!=="undefined"&&user&&user.city)||"");
+function placesFor(d){
+  if(!isIv())return [];
+  const s=(d.n+" "+d.i.join(" ")).toLowerCase(),t=new Set();
+  if(/пицц/.test(s))t.add("pizza");
+  if(/ролл|суши|рамен|лапш|гёдза|мисо|нори/.test(s))t.add("asia");
+  if(/паста|брускетт/.test(s))t.add("euro");
+  if(/курица/.test(s)){t.add("chicken");t.add("meat")}
+  if(/мясо|рагу|пельмен/.test(s))t.add("meat");
+  if(/блин/.test(s))t.add("pancakes");
+  return PL.filter(p=>p.g.some(g=>t.has(g))&&!(user.habit==="healthy"&&p.t==="Фастфуд")).slice(0,3);
+}
+const MP={joy:["pizza","asia","euro"],sad:["home","pancakes","euro"],anxious:["home","euro"],angry:["meat","shawarma","burger"],tired:["home","chicken","pizza"],bored:["asia","shawarma","pancakes"],love:["euro","asia","home"],lonely:["home","pizza","euro"]};
+const TG={asia:"яркие вкусы и что-то новое",euro:"спокойный ужин без спешки",meat:"сытно и по-настоящему",home:"уютно, как дома",pizza:"можно разделить с компанией",burger:"быстро и сытно",shawarma:"остро и быстро",pancakes:"тёплое и привычное",chicken:"быстро и сытно"};
+function rank(){
+  const w=MP[cur]||[];
+  return PL.map((p,i)=>{let s=0;const why=[];w.forEach((g,j)=>{if(p.g.includes(g)){s+=3-j;why.push(TG[g])}});
+    if(user&&user.habit==="healthy"&&p.t==="Фастфуд")s-=2;return {p,s,why,i}}).sort((a,b)=>b.s-a.s||a.i-b.i);
+}
+const placeRow=x=>`<div class="pl"><b>${esc(x.p.n)}</b> <span class="star">${x.p.t}</span><p>${esc(x.p.d)}</p>${x.why.length?`<p>💡 ${esc(x.why.join(", "))}</p>`:""}<a href="https://2gis.ru/ivanovo/search/${encodeURIComponent(x.p.n)}" target="_blank" rel="noopener">Найти на карте</a></div>`;
+function moodPlaces(){const t=rank().filter(x=>x.s>0).slice(0,3);return t.length?`<h2 class="s2">📍 Где поесть под это настроение</h2>`+t.map(placeRow).join(""):""}
+function renderPlaces(){
+  const c=user&&user.city||"";
+  if(!c){$("#out").innerHTML=`<div class="empty">Укажите город в профиле (кнопка «Изменить»).</div>`;return}
+  if(!isIv()){$("#out").innerHTML=`<h2>📍 ${esc(c)}</h2><div class="empty">Для этого города пока нет списка заведений. Сейчас доступно: Иваново.</div>`;return}
+  const all=rank().filter(x=>ptype==="Все"||x.p.t===ptype),top=cur?all.filter(x=>x.s>0):[],rest=cur?all.filter(x=>x.s<=0):all,e=EM[cur];
+  $("#out").innerHTML=`<h2>📍 ${cur?"Под настроение: "+e.l.toLowerCase():"Где поесть в Иванове"}</h2><p class="note">${cur?"Заведения отсортированы под ваше настроение. ":"Выберите эмоцию во вкладке «Подборка», и заведения отсортируются под настроение. "}Список из открытых источников (2ГИС, Яндекс Карты), уточняйте адреса, часы работы и меню.</p>
+  <div class="chips" id="ptf" style="margin-bottom:8px">${["Все","Ресторан","Фастфуд"].map(t=>`<button class="chip" data-k="${t}" aria-pressed="${t===ptype}">${t==="Ресторан"?"Рестораны":t}</button>`).join("")}</div>`+
+  top.map(placeRow).join("")+(top.length&&rest.length?`<h2 class="s2">Другие заведения</h2>`:"")+rest.map(placeRow).join("");
+}
+const hr=new Date().getHours();
+let cur=null,page=0,wx="mild",meal=hr>=5&&hr<11?"b":hr<16&&hr>=11?"l":hr>=16&&hr<18?"s":hr>=18&&hr<23?"d":"s";
+let user=store.get("mf_user",null),editing=!user||!user.diet||!user.city,REV=store.get("mf_rev",{}),removed={},openRev={};
+const seg=(el,items,val)=>{$(el).innerHTML=items.map(([k,t])=>`<button class="chip" data-k="${k}" aria-pressed="${k===val}">${t}</button>`).join("")};
+function drawCtl(){
+  $("#chips").innerHTML=Object.entries(EM).map(([k,d])=>`<button class="chip" data-k="${k}" aria-pressed="${k===cur}"><span aria-hidden="true">${d.e}</span>${d.l}</button>`).join("");
+  seg("#wx",WX,wx);seg("#ml",ML,meal);seg("#vw",[["dishes","🍽 Подборка"],["places","📍 Заведения"]],view);
+}
+function drawProf(){
+  if(editing){
+    const have=new Set(user?.al||[]);
+    document.body.classList.toggle("gate",!(user?.diet&&user?.city));$("#prof").innerHTML=`<h3>${user?.diet?"Профиль":"Регистрация: расскажите о себе"}</h3><input type="text" id="pn" placeholder="Ваше имя" value="${esc(user?.name||"")}" aria-label="Имя" maxlength="30">
+    <input type="text" id="pc" placeholder="Ваш город (например, Иваново)" value="${esc(user?.city||"")}" aria-label="Город" maxlength="40" style="margin-top:8px">
+    <fieldset class="fs"><legend>Питание</legend>${radios("diet",DIETS,user?.diet||"all")}</fieldset>
+    <fieldset class="fs"><legend>Что вам ближе</legend>${radios("habit",HABITS,user?.habit||"mix")}</fieldset>
+    <p class="hint" style="margin-top:14px"><b>Аллергии.</b> Мы будем предупреждать о таких продуктах.</p>
+    <div class="al-grid">${Object.keys(ALGS).map(a=>`<label><input type="checkbox" value="${a}" ${have.has(a)?"checked":""}>${a}</label>`).join("")}</div>
+    <fieldset class="fs"><legend>Ограничения</legend><div class="al-grid" id="rsg">${Object.keys(RS).map(r=>`<label><input type="checkbox" value="${r}" ${(user?.rs||[]).includes(r)?"checked":""}>${r}</label>`).join("")}</div></fieldset>
+    <p class="hint" id="perr"></p><button class="btn" id="psave">${user?.diet?"Сохранить":"Зарегистрироваться"}</button><p class="hint">Профиль хранится в этом браузере.</p>`;
+  }else{
+    $("#prof").innerHTML=`<h3>Привет, ${esc(user.name||"гость")}!</h3><p class="hint" style="margin:0 0 8px">Город: ${esc(user.city||"не указан")}<br>${DIETS[user.diet]}. ${HABITS[user.habit]}.<br>Аллергии: ${user.al.length?esc(user.al.join(", ")):"нет"}<br>Ограничения: ${user.rs.length?esc(user.rs.join(", ")):"нет"}</p><button class="btn ghost sm" id="pedit">Изменить</button>`;
+  }
+}
+const active=d=>d.i.filter(x=>!(removed[d.n]||[]).includes(x));
+const algs=d=>[...new Set(active(d).map(x=>A2[x]).filter(a=>user&&user.al.includes(a)))];
+const dietBad=d=>!user||!user.diet||user.diet==="all"?[]:active(d).filter(x=>BAN[user.diet].has(x));
+const rsBad=d=>[...new Set(active(d).flatMap(x=>(R2[x]||[]).filter(r=>user&&user.rs&&user.rs.includes(r))))];
+const health=d=>{const n=active(d).filter(x=>IND.has(x)).length;return n===0?2:n===1?1:0};
+const flag=x=>!!user&&!!user.diet&&(user.al.includes(A2[x])||(R2[x]||[]).some(r=>user.rs.includes(r))||(user.diet!=="all"&&BAN[user.diet].has(x)));
+function score(d){let s=0;if(d.m.includes(meal))s+=2;
+  if(wx==="hot")s+=d.t==="c"?2:d.t==="h"?-1:0;if(wx==="cold")s+=d.t==="h"?2:d.t==="c"?-1:0;
+  if(algs(d).length)s-=3;if(dietBad(d).length)s-=5;if(rsBad(d).length)s-=2;if(user?.habit==="healthy")s+=health(d)*1.5;if(user?.habit==="tasty")s+=2-health(d);return s}
+function card(d){
+  const rv=REV[d.n]||[],avg=rv.length?(rv.reduce((a,r)=>a+r.s,0)/rv.length).toFixed(1):null;
+  const pl=placesFor(d),bad=algs(d),db=dietBad(d),rb=rsBad(d),rem=removed[d.n]||[],hl=["🍰 для удовольствия","","🌿 полезное"][health(d)];
+  const open=openRev[d.n];
+  return `<div class="item" data-n="${esc(d.n)}"><div class="emoji" aria-hidden="true">${d.e}</div><div>
+  <b>${esc(d.n)}</b><span class="star">${avg?`★ ${avg} (${rv.length})`:"нет отзывов"}</span><p>${esc(d.w)} <small>${hl}</small></p>
+  ${bad.length?`<div class="warn">⚠️ Внимание, аллергия: ${esc(bad.join(", "))}. Уберите продукт ниже или выберите другое блюдо.</div>`:""}${db.length?`<div class="warn">Не подходит под ваше питание (${esc(DIETS[user.diet].toLowerCase())}): ${esc(db.join(", "))}. Уберите ингредиент ниже, чтобы подошло.</div>`:""}${rb.length?`<div class="warn">Не подходит под ваши ограничения: ${esc(rb.join(", "))}.</div>`:""}
+  <div class="ings" aria-label="Ингредиенты, нажмите чтобы убрать">${d.i.map(x=>`<button class="ing${flag(x)?" al":""}" data-i="${esc(x)}" aria-pressed="${rem.includes(x)}" title="Нажмите, чтобы ${rem.includes(x)?"вернуть":"убрать"}">${esc(x)}</button>`).join("")}</div>
+  ${pl.length?`<p class="hint">Где попробовать: ${pl.map(p=>esc(p.n)).join(", ")}</p>`:""}
+  <button class="btn ghost sm" data-act="rev">${open?"Скрыть отзывы":"Отзывы"}</button>
+  ${open?`<div class="rev">${rv.length?rv.slice(-5).reverse().map(r=>`<q>${"★".repeat(r.s)}${"☆".repeat(5-r.s)} ${esc(r.t)}</q><small>${esc(r.u)}</small>`).join("<br>"):"Пока нет отзывов. Будьте первым."}
+  <div class="f"><select aria-label="Оценка"><option value="5">5 — отлично</option><option value="4">4</option><option value="3">3</option><option value="2">2</option><option value="1">1</option></select>
+  <textarea rows="2" maxlength="200" placeholder="Ваш отзыв" aria-label="Отзыв"></textarea><button class="btn sm" data-act="send">Отправить</button></div></div>`:""}
+  </div></div>`}
+function render(){
+  drawCtl();
+  if(view==="places"){renderPlaces();return}
+  if(!cur){$("#out").innerHTML=`<div class="empty">Выберите эмоцию, и здесь появится подборка.</div>`;return}
+  const e=EM[cur];document.documentElement.style.setProperty("--h",e.h);
+  const ok=d=>dietBad(d).length<2;
+  const list=e.f.map(D).filter(ok).map((d,i)=>({d,s:score(d),i})).sort((a,b)=>b.s-a.s||a.i-b.i).map(x=>x.d);
+  const n=list.length,st=n?(page*4)%n:0,shown=Array.from({length:Math.min(4,n)},(_,i)=>list[(st+i)%n]);
+  const mn=ML.find(x=>x[0]===meal)[1].toLowerCase(),wn=WX.find(x=>x[0]===wx)[1].slice(2).toLowerCase();
+  const dr=(DR[wx]||[]).map(D).filter(ok).filter(d=>d.m.includes(meal)||true);
+  $("#out").innerHTML=`<h2>${e.e} ${e.l}</h2><p class="note">${e.note} Учтено: ${mn}, погода — ${wn}.</p>`+
+  (shown.length?shown.map(card).join(""):`<div class="empty">Нет подходящих блюд. Попробуйте снять фильтр.</div>`)+
+  (n>4?`<button class="btn ghost" id="more">Показать другие</button>`:"")+(isIv()?moodPlaces():"")+
+  (dr.length?`<h2 class="s2">${wx==="hot"?"🧊 Что выпить в жару":"☕ Что выпить в холод"}</h2>`+dr.map(card).join(""):"")+
+  `<p class="fine">Это идеи для настроения, а не медицинский совет. Подсказки об аллергенах основаны на списке ингредиентов в приложении. Они не учитывают состав готовых продуктов и перекрёстное загрязнение, поэтому всегда проверяйте этикетки. Если тяжёлое состояние держится долго, поговорите с врачом или психологом.</p>`;
+}
+function detect(t){t=t.toLowerCase();let b=null,m=0;for(const k in EM){const s=EM[k].kw.filter(w=>t.includes(w)).length;if(s>m){m=s;b=k}}return b}
+function pick(k){cur=k;page=0;render()}
+document.addEventListener("click",ev=>{
+  const t=ev.target,b=t.closest("button");if(!b)return;
+  if(b.closest("#chips")){pick(b.dataset.k);return}
+  if(b.closest("#vw")){view=b.dataset.k;render();return}
+  if(b.closest("#ptf")){ptype=b.dataset.k;render();return}
+  if(b.closest("#wx")){wx=b.dataset.k;render();return}
+  if(b.closest("#ml")){meal=b.dataset.k;render();return}
+  if(b.id==="more"){page++;render();return}
+  if(b.id==="pedit"){editing=true;drawProf();return}
+  if(b.id==="psave"){const nm=$("#pn").value.trim();if(!nm){$("#perr").textContent="Укажите имя.";$("#pn").focus();return}
+    const ct=$("#pc").value.trim();if(!ct){$("#perr").textContent="Укажите город.";$("#pc").focus();return}
+    const q=s=>[...document.querySelectorAll(s)].map(x=>x.value),v=n=>document.querySelector(`input[name=${n}]:checked`).value;
+    user={name:nm.slice(0,30),city:ct.slice(0,40),diet:v("diet"),habit:v("habit"),al:q("#prof .al-grid:not(#rsg) input:checked"),rs:q("#rsg input:checked")};
+    store.set("mf_user",user);editing=false;document.body.classList.remove("gate");drawProf();render();return}
+  if(b.id==="go"){const k=detect($("#free").value);if(k)pick(k);else $("#out").innerHTML=`<div class="empty">Не удалось понять состояние по этим словам.<br>Выберите эмоцию из списка.</div>`;return}
+  if(b.id==="geo"){geo();return}
+  const it=b.closest(".item");if(!it)return;const n=it.dataset.n;
+  if(b.classList.contains("ing")){const r=removed[n]=removed[n]||[],x=b.dataset.i;const j=r.indexOf(x);j>=0?r.splice(j,1):r.push(x);render();return}
+  if(b.dataset.act==="rev"){openRev[n]=!openRev[n];render();return}
+  if(b.dataset.act==="send"){const txt=it.querySelector("textarea").value.trim();if(!txt)return;
+    (REV[n]=REV[n]||[]).push({s:+it.querySelector("select").value,t:txt,u:user?.name||"Гость"});store.set("mf_rev",REV);render()}
+});
+$("#free").addEventListener("keydown",e=>{if(e.key==="Enter")$("#go").click()});
+
+async function geo(){
+  const n=$("#wnote");n.textContent="Определяем…";
+  try{
+    const p=await new Promise((ok,no)=>navigator.geolocation.getCurrentPosition(ok,no,{timeout:8000}));
+    const r=await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${p.coords.latitude}&longitude=${p.coords.longitude}&current=temperature_2m`);
+    const t=(await r.json()).current.temperature_2m;
+    wx=t>=25?"hot":t<=10?"cold":"mild";n.textContent=`Сейчас около ${Math.round(t)}°C`;render();
+  }catch(e){n.textContent="Не удалось определить автоматически. Выберите погоду вручную."}
+}
+drawProf();render();
+</script>
+</body>
+</html>
